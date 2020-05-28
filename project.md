@@ -1,0 +1,3 @@
+- [ ] add search bar
+- [ ] add elements
+- [ ] configure styling using scss

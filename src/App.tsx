@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Container from "./components/Container";
+import { AppContextProvider } from "./context/AppContext/appContext";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div>
-      <h2>Hello World</h2>
-    </div>
+    <AppContextProvider>
+      <Container />
+    </AppContextProvider>
   );
-}
+};
 
 export default App;
