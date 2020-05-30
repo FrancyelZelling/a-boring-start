@@ -8,7 +8,7 @@ interface Props {
 const ListItem: React.FC<Props> = ({ item }) => {
   return (
     <li>
-      {item.name}: {item.link}
+      <a href={item.link}>{item.name}</a>
     </li>
   );
 };

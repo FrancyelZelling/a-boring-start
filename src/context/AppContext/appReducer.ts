@@ -1,5 +1,5 @@
 import { ADD_ITEM } from "../types";
-import { ContextInterface, ItemInterface } from "./appContext";
+import { ItemInterface, StateInterface } from "./appContext";
 
 export interface ActionInterface {
   type: string;
@@ -9,7 +9,7 @@ export interface ActionInterface {
   };
 }
 
-export default (state: ContextInterface, action: ActionInterface) => {
+export default (state: StateInterface, action: ActionInterface) => {
   switch (action.type) {
     case ADD_ITEM:
       state.list.filter((item) => item.items.push(action.payload?.item));

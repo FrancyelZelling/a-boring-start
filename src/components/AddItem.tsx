@@ -18,7 +18,7 @@ const AddItem = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    addItem!(item, "fun");
+    addItem(item, "fun");
   };
 
   return (

@@ -5,7 +5,11 @@ import AppReducer from "./appReducer";
 
 export interface ContextInterface {
   list: CategoryInterface[];
-  addItem?(item: ItemInterface, category: string): void;
+  addItem: (item: ItemInterface, category: string) => void;
+}
+
+export interface StateInterface {
+  list: CategoryInterface[];
 }
 
 export interface CategoryInterface {
@@ -27,25 +31,23 @@ interface Props {
 /**
  * Initializing Context
  */
-const AppContext = createContext<ContextInterface>({
-  list: [],
-});
+const AppContext = createContext<ContextInterface | null>(null);
 
 /**
  * Initializing Provider
  */
 
+const initialState: StateInterface = {
+  list: [
+    {
+      name: "fun",
+      items: [{ name: "Youtube", link: "https://www.youtube.com" }],
+    },
+  ],
+};
+
 export function AppContextProvider(props: Props) {
   const { children } = props;
-
-  const initialState: ContextInterface = {
-    list: [
-      {
-        name: "fun",
-        items: [{ name: "Youtube", link: "https://www.youtube.com" }],
-      },
-    ],
-  };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
@@ -66,11 +68,5 @@ export default AppContext;
  * Initializing Hooks for ease of use in our code
  */
 export function useAppContext() {
-  const context = useContext(AppContext);
-
-  if (typeof context === undefined) {
-    throw new Error("AppContext not initialized");
-  }
-
-  return context;
+  return useContext(AppContext)!;
 }
