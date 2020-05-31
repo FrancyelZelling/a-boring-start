@@ -1,17 +1,23 @@
 import React from "react";
 import List from "./List";
-import AddItem from "./AddItem";
 
 const Container: React.FC = () => {
   return (
     <React.Fragment>
-      <div>
+      <div className="container">
         <form action="https://www.duckduckgo.com" method="get">
-          <input type="text" name="q" id="" placeholder="Duck Duck Go..." />
+          <input
+            className="searchbar"
+            type="text"
+            name="q"
+            id=""
+            placeholder="Duck Duck Go..."
+          />
         </form>
-        <List />
+        <div className="lists">
+          <List />
+        </div>
       </div>
-      <AddItem />
     </React.Fragment>
   );
 };

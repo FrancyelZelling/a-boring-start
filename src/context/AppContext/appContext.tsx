@@ -31,6 +31,7 @@ interface Props {
 /**
  * Initializing Context
  */
+
 const AppContext = createContext<ContextInterface | null>(null);
 
 /**
@@ -40,8 +41,25 @@ const AppContext = createContext<ContextInterface | null>(null);
 const initialState: StateInterface = {
   list: [
     {
-      name: "fun",
-      items: [{ name: "Youtube", link: "https://www.youtube.com" }],
+      name: "Fun",
+      items: [
+        { name: "Youtube", link: "https://www.youtube.com" },
+        { name: "Twitter", link: "https://www.twitter.com" },
+        { name: "Reddit", link: "https://www.reddit.com" },
+        { name: "Twitch", link: "https://www.twitch.tv" },
+        { name: "Netflix", link: "https://www.netflix.com" },
+      ],
+    },
+    {
+      name: "Dev",
+      items: [{ name: "Github", link: "https://www.github.com" }],
+    },
+    {
+      name: "Shopping",
+      items: [
+        { name: "Kabum", link: "https://www.kabum.com.br" },
+        { name: "Mercado Livre", link: "https://www.mercadolivre.com.br" },
+      ],
     },
   ],
 };

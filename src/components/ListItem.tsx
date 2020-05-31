@@ -7,7 +7,7 @@ interface Props {
 
 const ListItem: React.FC<Props> = ({ item }) => {
   return (
-    <li>
+    <li className="list-item">
       <a href={item.link}>{item.name}</a>
     </li>
   );

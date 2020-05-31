@@ -8,8 +8,8 @@ const List: React.FC = () => {
   return (
     <React.Fragment>
       {list.map((item) => (
-        <ul key={item.name}>
-          <p>{item.name}</p>
+        <ul className="list" key={item.name}>
+          <p className="list-title">{item.name}</p>
           {item.items.map((item) => (
             <ListItem key={item.name} item={item} />
           ))}

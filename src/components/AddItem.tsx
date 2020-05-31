@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { useAppContext, ItemInterface } from "../context/AppContext/appContext";
 
 const AddItem = () => {
@@ -13,7 +13,7 @@ const AddItem = () => {
    * Using any as type because i dont know a proper interface
    * @param e is an htmlEvent
    */
-  const onChange = (e: any) =>
+  const onChange = (e: ChangeEvent<HTMLInputElement>) =>
     setItem({ ...item, [e.target.name]: e.target.value });
 
   const onSubmit = (e: any) => {

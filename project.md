@@ -1,3 +1,6 @@
-- [ ] add search bar
-- [ ] add elements
-- [ ] configure styling using scss
+- [x] add search bar
+- [x] add elements
+- [x] configure styling using scss
+- [ ] Add customization
+- [ ] Add custom colors for items
+- [ ] Find good favico
