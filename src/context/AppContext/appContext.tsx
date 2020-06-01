@@ -52,7 +52,10 @@ const initialState: StateInterface = {
     },
     {
       name: "Dev",
-      items: [{ name: "Github", link: "https://www.github.com" }],
+      items: [
+        { name: "Github", link: "https://www.github.com" },
+        { name: "LinkedIn", link: "https://www.linkedin.com" },
+      ],
     },
     {
       name: "Shopping",

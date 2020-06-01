@@ -10,7 +10,7 @@
 
 # production
 /build
-!project.md
+project.md
 
 # misc
 .DS_Store
