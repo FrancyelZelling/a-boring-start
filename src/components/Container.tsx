@@ -11,6 +11,7 @@ const Container: React.FC = () => {
             type="text"
             name="q"
             id=""
+            autoFocus={true}
             placeholder="Duck Duck Go..."
           />
         </form>

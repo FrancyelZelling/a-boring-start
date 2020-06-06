@@ -11,6 +11,9 @@
   border: none;
   border-radius: 30px;
   background-color: $primary-color;
+  &:focus {
+    border: none;
+  }
 }
 
 .container {
@@ -44,7 +47,7 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 .list-title {

@@ -43,10 +43,10 @@ const initialState: StateInterface = {
     {
       name: "Fun",
       items: [
-        { name: "Youtube", link: "https://www.youtube.com" },
+        { name: "Youtube", link: "https://www.youtube.com", color: "red" },
         { name: "Twitter", link: "https://www.twitter.com" },
-        { name: "Reddit", link: "https://www.reddit.com" },
-        { name: "Twitch", link: "https://www.twitch.tv" },
+        { name: "Reddit", link: "https://www.reddit.com", color: "orange" },
+        { name: "Twitch", link: "https://www.twitch.tv", color: "purple" },
         { name: "Netflix", link: "https://www.netflix.com" },
       ],
     },

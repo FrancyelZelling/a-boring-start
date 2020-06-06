@@ -2,5 +2,5 @@
 - [x] add elements
 - [x] configure styling using scss
 - [ ] Add customization
-- [ ] Add custom colors for items
+- [x] Add custom colors for items
 - [ ] Find good favico
