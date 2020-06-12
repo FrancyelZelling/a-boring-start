@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useAppContext } from "../context/AppContext/appContext";
+
+import AddList from "./AddList";
 import List from "./List";
 
 const Container: React.FC = () => {
+  const { loadItems } = useAppContext();
+
+  useEffect(() => {
+    loadItems();
+  }, []);
+
   return (
     <React.Fragment>
       <div className="container">
@@ -19,6 +28,7 @@ const Container: React.FC = () => {
           <List />
         </div>
       </div>
+      <AddList />
     </React.Fragment>
   );
 };

@@ -1,15 +1,27 @@
 import React from "react";
-import ListItem from "./ListItem";
 import { useAppContext } from "../context/AppContext/appContext";
 
+import AddItem from "./AddItem";
+import ListItem from "./ListItem";
+
 const List: React.FC = () => {
-  const { list } = useAppContext();
+  const { list, openModal, setEditItem } = useAppContext();
+
+  const handleItemEdit = (itemName: string) => {
+    openModal();
+    setEditItem(itemName);
+  };
 
   return (
     <React.Fragment>
       {list.map((item) => (
         <ul className="list" key={item.name}>
-          <p className="list-title">{item.name}</p>
+          <div className="list-title">
+            <p>{item.name}</p>
+
+            <button onClick={() => handleItemEdit(item.name)}>+</button>
+          </div>
+          <AddItem listName={item.id} />
           {item.items.map((item) => (
             <ListItem key={item.name} item={item} />
           ))}

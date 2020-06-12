@@ -4,15 +4,37 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+// Default Styling
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+
+a:visited {
+  color: $text-color;
+}
+
+li {
+  list-style: none;
+}
+
 .searchbar {
   width: 700px;
   height: 50px;
   padding-left: 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: $primary-color;
   &:focus {
     border: none;
+    background-color: $secondary-color;
   }
 }
 
@@ -36,6 +58,13 @@
   margin: 0 5px;
   width: 200px;
   align-items: center;
+
+  button {
+    width: 20px;
+    height: 20px;
+    background-color: $primary-color;
+    border: none;
+  }
 }
 
 .list-item {
@@ -51,29 +80,70 @@
 }
 
 .list-title {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 2px solid $primary-color;
   width: 160px;
   font-size: 1.2rem;
   text-align: center;
 }
 
-// Default Styling
-body {
+.modal {
   background-color: $background-color;
-  color: $text-color;
-  font-family: "Open Sans", sans-serif;
-}
+  border: 2px solid $text-color;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 25%;
+  left: 34%;
+  // right: auto;
+  // bottom: auto;
+  // margin-right: 50%;
+  // width: 400px;
+  // height: 300px;
+  justify-content: center;
+  margin: 0 auto;
 
-a {
-  text-decoration: none;
-  color: $text-color;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    font-size: 1.2rem;
 
-a:visited {
-  color: $text-color;
-}
+    input {
+      width: 300px;
+      height: 40px;
+      border: 1px solid $secondary-color;
+      margin: 10px 0;
+    }
+    button {
+      border: none;
+      background-color: $primary-color;
+      border-radius: 20px;
+      margin-top: 15px;
+      width: 250px;
+      height: 35px;
+    }
+  }
 
-li {
-  list-style: none;
+  .listedItems {
+    width: 200px;
+    margin: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      width: 160px;
+      margin: 2px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

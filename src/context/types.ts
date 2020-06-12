@@ -1,1 +1,10 @@
 export const ADD_ITEM = "ADD_ITEM";
+export const EDIT_ITEM = "EDIT_ITEM";
+export const REMOVE_ITEM = "REMOVE_ITEM";
+export const OPEN_MODAL = "OPEN_MODAL";
+export const CLOSE_MODAL = "CLOSE_MODAL";
+export const SET_EDIT_ITEM = "SET_EDIT_ITEM";
+export const SAVE_ITEMS = "SAVE_ITEMS";
+export const LOAD_ITEMS = "LOAD_ITEMS";
+export const ADD_LIST = "ADD_LIST";
+export const REMOVE_LIST = "REMOVE_LIST";
