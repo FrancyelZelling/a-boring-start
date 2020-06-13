@@ -66,6 +66,7 @@ const AddItem = ({ listName }: Props) => {
     } else {
       addItem(item, listToEdit!);
     }
+    setEditing(false);
     setItem({ id: "", name: "", link: "", color: "" });
   };
 
@@ -81,7 +82,7 @@ const AddItem = ({ listName }: Props) => {
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={handleCloseModal}
-      className={"modal"}
+      className={"modal addItemModal"}
     >
       <form onSubmit={onSubmit}>
         <h2>{listToEdit}</h2>
@@ -109,17 +110,20 @@ const AddItem = ({ listName }: Props) => {
           value={item.color}
           placeholder="Item Color(optional)..."
         />
-        <button type="submit">Submit</button>
+        <div className="addItemsBtn">
+          <button type="submit">{editing ? "Edit" : "Add"}</button>
+          <button onClick={handleCloseModal}>Close</button>
+        </div>
       </form>
       <div>
         {filteredList.map((list) => (
           <div key={list.id} className="listedItems">
             {list.items.map((listItem) => (
               <li key={listItem.id}>
-                {listItem.name + " from " + list.name}
-                <button onClick={() => handleEditItem(listItem)}>edit</button>
+                <p>{listItem.name}</p>
+                <button onClick={() => handleEditItem(listItem)}>Edit</button>
                 <button onClick={() => removeItem(listItem, list.name)}>
-                  remove
+                  Remove
                 </button>
               </li>
             ))}

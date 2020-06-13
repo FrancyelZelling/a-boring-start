@@ -8,9 +8,11 @@ import {
   SAVE_ITEMS,
   LOAD_ITEMS,
   ADD_LIST,
+  REMOVE_LIST,
   REMOVE_ITEM,
 } from "../types";
 import { ItemInterface, StateInterface, CategoryInterface } from "./appContext";
+import { table } from "console";
 
 export interface ActionInterface {
   type: string;
@@ -95,6 +97,15 @@ export default (state: StateInterface, action: ActionInterface) => {
       return {
         ...state,
         list: [...state.list, newList],
+      };
+
+    case REMOVE_LIST:
+      let filteredLists = state.list.filter(
+        (list) => list && list.name !== action.payload.listName
+      );
+      return {
+        ...state,
+        list: filteredLists,
       };
 
     case OPEN_MODAL:

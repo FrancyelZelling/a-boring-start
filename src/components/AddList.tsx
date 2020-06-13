@@ -25,18 +25,28 @@ const AddList = () => {
 
   return (
     <div>
-      <button onClick={() => changeModal(true)}>Add List</button>
+      <button className="addListBtn" onClick={() => changeModal(true)}>
+        Add List
+      </button>
       <Modal
-        className={"modal"}
+        className={"modal addListModal"}
         isOpen={modalState}
         onRequestClose={() => changeModal(false)}
       >
         <form onSubmit={onSubmit}>
           <label htmlFor="listName">List Name</label>
-          <input onChange={onChange} type="text" name="listName" id="" />
+          <input
+            onChange={onChange}
+            type="text"
+            name="listName"
+            id=""
+            placeholder="Add List..."
+          />
 
-          <button type="submit">Add List</button>
-          <button onClick={() => changeModal(false)}> Close </button>
+          <div>
+            <button type="submit">Add List</button>
+            <button onClick={() => changeModal(false)}> Close </button>
+          </div>
         </form>
       </Modal>
     </div>

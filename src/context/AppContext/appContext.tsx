@@ -8,6 +8,7 @@ import {
   SAVE_ITEMS,
   LOAD_ITEMS,
   ADD_LIST,
+  REMOVE_LIST,
   REMOVE_ITEM,
 } from "../types";
 
@@ -27,6 +28,7 @@ export interface ContextInterface {
   saveItems: () => void;
   loadItems: () => void;
   addList: (listName: string) => void;
+  removeList: (listName: string) => void;
 }
 
 export interface StateInterface {
@@ -85,6 +87,10 @@ export function AppContextProvider(props: Props) {
     dispatch({ type: ADD_LIST, payload: { listName } });
   };
 
+  const removeList = (listName: string) => {
+    dispatch({ type: REMOVE_LIST, payload: { listName } });
+  };
+
   const openModal = () => {
     dispatch({ type: OPEN_MODAL, payload: {} });
   };
@@ -104,7 +110,6 @@ export function AppContextProvider(props: Props) {
   const loadItems = () => {
     dispatch({ type: LOAD_ITEMS, payload: {} });
   };
-
   return (
     <AppContext.Provider
       value={{
@@ -115,6 +120,7 @@ export function AppContextProvider(props: Props) {
         editItem,
         removeItem,
         addList,
+        removeList,
         openModal,
         closeModal,
         setEditItem,
