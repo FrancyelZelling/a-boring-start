@@ -18,7 +18,7 @@ const List: React.FC = () => {
         <ul className="list" key={item.name}>
           <div className="list-title">
             <p>{item.name}</p>
-            <div className="">
+            <div>
               <button onClick={() => handleItemEdit(item.name)}>+</button>
               <button
                 onClick={() =>
@@ -29,7 +29,7 @@ const List: React.FC = () => {
               </button>
             </div>
           </div>
-          <AddItem listName={item.id} />
+          <AddItem />
           {item.items.map((item) => (
             <ListItem key={item.name} item={item} />
           ))}

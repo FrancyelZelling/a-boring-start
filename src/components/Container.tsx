@@ -19,7 +19,6 @@ const Container: React.FC = () => {
             className="searchbar"
             type="text"
             name="q"
-            id=""
             autoFocus={true}
             placeholder="Duck Duck Go..."
           />

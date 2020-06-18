@@ -6,11 +6,8 @@ import {
   CategoryInterface,
 } from "../context/AppContext/appContext";
 
-interface Props {
-  listName: string;
-}
 
-const AddItem = ({ listName }: Props) => {
+const AddItem = () => {
   const [filteredList, setFielteredList] = useState<CategoryInterface[]>([
     {
       id: "",

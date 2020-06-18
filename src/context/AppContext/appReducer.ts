@@ -12,7 +12,6 @@ import {
   REMOVE_ITEM,
 } from "../types";
 import { ItemInterface, StateInterface, CategoryInterface } from "./appContext";
-import { table } from "console";
 
 export interface ActionInterface {
   type: string;
