@@ -74,12 +74,12 @@ export function AppContextProvider(props: Props) {
     dispatch({ type: ADD_ITEM, payload: { category, item } });
     dispatch({ type: SAVE_ITEMS, payload: {} });
   };
-  
+
   const editItem = (item: ItemInterface, category: string) => {
     dispatch({ type: EDIT_ITEM, payload: { category, item } });
     dispatch({ type: SAVE_ITEMS, payload: {} });
   };
-  
+
   const removeItem = (item: ItemInterface, category: string) => {
     dispatch({ type: REMOVE_ITEM, payload: { item, category } });
     dispatch({ type: SAVE_ITEMS, payload: {} });
@@ -87,10 +87,12 @@ export function AppContextProvider(props: Props) {
 
   const addList = (listName: string) => {
     dispatch({ type: ADD_LIST, payload: { listName } });
+    dispatch({ type: SAVE_ITEMS, payload: {} });
   };
 
   const removeList = (listName: string) => {
     dispatch({ type: REMOVE_LIST, payload: { listName } });
+    dispatch({ type: SAVE_ITEMS, payload: {} });
   };
 
   const openModal = () => {
@@ -112,7 +114,7 @@ export function AppContextProvider(props: Props) {
   const loadItems = () => {
     dispatch({ type: LOAD_ITEMS, payload: {} });
   };
-  
+
   return (
     <AppContext.Provider
       value={{

@@ -102,6 +102,7 @@ export default (state: StateInterface, action: ActionInterface) => {
       let filteredLists = state.list.filter(
         (list) => list && list.name !== action.payload.listName
       );
+      console.log(filteredLists);
       return {
         ...state,
         list: filteredLists,
