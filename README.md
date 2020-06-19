@@ -4,7 +4,7 @@ Simple and customizable start page for your browser
 
 You can add, edit and remove items. Also create and remove list.
 
-Your needs make your boring start,[give it a try now!](https://https://a-boring-start.netlify.app/)
+Your needs make your boring start, [give it a try now!](https://a-boring-start.netlify.app/)
 
 ## Features
 
